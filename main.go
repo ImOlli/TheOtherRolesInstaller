@@ -22,6 +22,7 @@ func main() {
 		zenity.CancelLabel("Cancel"),
 	)
 
+	// User wants to cancel the installation
 	if action != nil {
 		// Close installer
 		os.Exit(0)
@@ -134,6 +135,8 @@ func main() {
 		}
 	}
 
+	dlg.Value(80)
+
 	// Copying AmongUs Installation
 	dlg.Text("Creating Among Us Installation")
 	fmt.Println("Creating Among Us Installation")
@@ -146,6 +149,8 @@ func main() {
 	fmt.Println("Coping mod to installation...")
 	copy(filepath.Join(tempFolder, "TheOtherRoles"), theOtherRolesInstallation)
 
+	dlg.Value(90)
+
 	// Clean up
 	dlg.Text("Cleaning up...")
 	fmt.Println("Cleaning up...")
@@ -154,6 +159,8 @@ func main() {
 	if err != nil {
 		fmt.Println("Error while deleting temp folder: " + err.Error())
 	}
+
+	dlg.Value(100)
 
 	// TODO Create shortcut to TheOtherRoles Mod Installation
 
